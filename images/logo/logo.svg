@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="80" viewBox="0 0 200 80" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .company-name { font: bold 24px Arial; fill: #333; }
+        .tagline { font: 12px Arial; fill: #666; }
+    </style>
+    <g transform="translate(10,40)">
+        <path d="M10,0 Q25,-20 40,0 T70,0" stroke="#007bff" fill="none" stroke-width="3"/>
+        <text x="80" y="10" class="company-name">قبلي</text>
+        <text x="80" y="25" class="tagline">للمقاولات والديكور</text>
+    </g>
+</svg>

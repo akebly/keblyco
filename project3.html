@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>مطعم راقي - قبلي للتصميم الداخلي</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+	<style>
+		/* Disable image dragging and right-click */
+		img {
+			user-drag: none;
+			-webkit-user-drag: none;
+			user-select: none;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			pointer-events: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+		<div class="container">
+			<div class="d-flex justify-content-between align-items-center w-100">
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">الرئيسية</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="index.html#services">خدماتنا</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="index.html#projects">مشاريعنا</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">من نحن</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">اتصل بنا</a>
+						</li>
+					</ul>
+				</div>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand order-first" href="index.html">
+					<img src="images/logo/logo-ar.png" alt="قبلي للتصميم الداخلي" class="navbar-logo">
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Project Header -->
+	<section class="page-header py-5 mt-5 bg-light">
+		<div class="container">
+			<h1 class="text-center mb-4">مطعم راقي</h1>
+			<p class="text-center">تصميم داخلي لمطعم عصري</p>
+		</div>
+	</section>
+
+	<!-- Project Gallery -->
+	<section class="py-5">
+		<div class="container">
+			<div class="project-gallery-large mb-4">
+				<img src="images/projects/project3-1.jpg" alt="مطعم راقي" class="main-image-large">
+				<div class="thumbnail-container">
+					<img src="images/projects/project3-1.jpg" alt="مطعم راقي - صورة 1" class="thumbnail active" onclick="changeMainImage(0)">
+					<img src="images/projects/project3-2.jpg" alt="مطعم راقي - صورة 2" class="thumbnail" onclick="changeMainImage(1)">
+					<img src="images/projects/project3-3.jpg" alt="مطعم راقي - صورة 3" class="thumbnail" onclick="changeMainImage(2)">
+					<img src="images/projects/project3-4.jpg" alt="مطعم راقي - صورة 4" class="thumbnail" onclick="changeMainImage(3)">
+					<img src="images/projects/project3-5.jpg" alt="مطعم راقي - صورة 5" class="thumbnail" onclick="changeMainImage(4)">
+					<img src="images/projects/project3-6.jpg" alt="مطعم راقي - صورة 6" class="thumbnail" onclick="changeMainImage(5)">
+				</div>
+			</div>
+			<div class="project-details">
+				<h2>تفاصيل المشروع</h2>
+				<p>تصميم داخلي عصري لمطعم راقي يجمع بين الأناقة والراحة. يتميز التصميم بالمساحات المفتوحة والإضاءة المميزة، مع التركيز على خلق أجواء مثالية لتناول الطعام.</p>
+				<div class="project-features mt-4">
+					<h3>مميزات المشروع</h3>
+					<ul>
+						<li><i class="fas fa-check"></i> تصميم عصري وأنيق</li>
+						<li><i class="fas fa-check"></i> إضاءة مميزة ومدروسة</li>
+						<li><i class="fas fa-check"></i> مساحات مريحة للضيوف</li>
+						<li><i class="fas fa-check"></i> تجهيزات عالية الجودة</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="bg-dark text-light py-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h3>قبلي للتصميم الداخلي</h3>
+					<p>نحول أحلامك إلى واقع</p>
+				</div>
+				<div class="col-md-4">
+					<h3>تواصل معنا</h3>
+					<p>
+						<i class="fas fa-phone me-2"></i> <a href="tel:+218930810080" dir="ltr">+218 93 081 0080</a><br>
+						<i class="fas fa-envelope"></i> info@kebly.co<br>
+						<i class="fas fa-location-dot"></i>طرابلس - طريق الشط
+					</p>
+				</div>
+				<div class="col-md-4">
+					<h3>تابعنا</h3>
+					<div class="social-links">
+						<a href="#" class="text-light"><i class="fab fa-facebook"></i></a>
+						<a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+						<a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		// Disable right-click on images
+		document.addEventListener('contextmenu', function(e) {
+			if (e.target.tagName === 'IMG') {
+				e.preventDefault();
+			}
+		});
+
+		// Image gallery functionality
+		function changeMainImage(index) {
+			const mainImage = document.querySelector('.main-image-large');
+			const thumbnails = document.querySelectorAll('.thumbnail');
+			const images = [
+				'images/projects/project3-1.jpg',
+				'images/projects/project3-2.jpg',
+				'images/projects/project3-3.jpg',
+				'images/projects/project3-4.jpg',
+				'images/projects/project3-5.jpg',
+				'images/projects/project3-6.jpg'
+			];
+
+			mainImage.src = images[index];
+			thumbnails.forEach((thumb, i) => {
+				thumb.classList.toggle('active', i === index);
+			});
+		}
+	</script>
+</body>
+</html>

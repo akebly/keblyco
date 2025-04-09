@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Elegant Restaurant - Kebly Interior Design</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+	<style>
+		/* Disable image dragging and right-click */
+		img {
+			user-drag: none;
+			-webkit-user-drag: none;
+			user-select: none;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			pointer-events: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- Language Switcher -->
+	<div class="language-switch">
+		<a href="project3.html" class="btn btn-outline-primary">العربية</a>
+	</div>
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="index-en.html">
+				<img src="images/logo/logo.png" alt="Kebly Interior Design" class="navbar-logo">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index-en.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index-en.html#services">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="index-en.html#projects">Projects</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about-en.html">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact-en.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Project Header -->
+	<section class="page-header py-5 mt-5 bg-light">
+		<div class="container">
+			<h1 class="text-center mb-4">Elegant Restaurant</h1>
+			<p class="text-center">Modern Interior Design for a Contemporary Restaurant</p>
+		</div>
+	</section>
+
+	<!-- Project Gallery -->
+	<section class="py-5">
+		<div class="container">
+			<div class="project-gallery-large mb-4">
+				<img src="images/projects/project3-1.jpg" alt="Elegant Restaurant" class="main-image-large">
+				<div class="thumbnail-container">
+					<img src="images/projects/project3-1.jpg" alt="Elegant Restaurant - Image 1" class="thumbnail active" onclick="changeMainImage(0)">
+					<img src="images/projects/project3-2.jpg" alt="Elegant Restaurant - Image 2" class="thumbnail" onclick="changeMainImage(1)">
+					<img src="images/projects/project3-3.jpg" alt="Elegant Restaurant - Image 3" class="thumbnail" onclick="changeMainImage(2)">
+					<img src="images/projects/project3-4.jpg" alt="Elegant Restaurant - Image 4" class="thumbnail" onclick="changeMainImage(3)">
+					<img src="images/projects/project3-5.jpg" alt="Elegant Restaurant - Image 5" class="thumbnail" onclick="changeMainImage(4)">
+					<img src="images/projects/project3-6.jpg" alt="Elegant Restaurant - Image 6" class="thumbnail" onclick="changeMainImage(5)">
+				</div>
+			</div>
+			<div class="project-details">
+				<h2>Project Details</h2>
+				<p>Modern interior design for an elegant restaurant that combines style and comfort. The design features open spaces and distinctive lighting, focusing on creating the perfect ambiance for dining.</p>
+				<div class="project-features mt-4">
+					<h3>Project Features</h3>
+					<ul>
+						<li><i class="fas fa-check"></i> Modern and Elegant Design</li>
+						<li><i class="fas fa-check"></i> Distinctive Lighting Design</li>
+						<li><i class="fas fa-check"></i> Comfortable Guest Areas</li>
+						<li><i class="fas fa-check"></i> High-Quality Equipment</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="bg-dark text-light py-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h3>Kebly Interior Design</h3>
+					<p>Turning your dreams into reality</p>
+				</div>
+				<div class="col-md-4">
+					<h3>Contact Us</h3>
+					<p>
+						<i class="fas fa-phone"></i> <a href="tel:+218930810080" class="text-light">+218 93 081 0080</a><br>
+						<i class="fas fa-envelope"></i> info@kebly.co<br>
+						<i class="fas fa-location-dot"></i> Tripoli - Shatt Road
+					</p>
+				</div>
+				<div class="col-md-4">
+					<h3>Follow Us</h3>
+					<div class="social-links">
+						<a href="#" class="text-light"><i class="fab fa-facebook"></i></a>
+						<a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+						<a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		// Disable right-click on images
+		document.addEventListener('contextmenu', function(e) {
+			if (e.target.tagName === 'IMG') {
+				e.preventDefault();
+			}
+		});
+
+		// Image gallery functionality
+		function changeMainImage(index) {
+			const mainImage = document.querySelector('.main-image-large');
+			const thumbnails = document.querySelectorAll('.thumbnail');
+			const images = [
+				'images/projects/project3-1.jpg',
+				'images/projects/project3-2.jpg',
+				'images/projects/project3-3.jpg',
+				'images/projects/project3-4.jpg',
+				'images/projects/project3-5.jpg',
+				'images/projects/project3-6.jpg'
+			];
+
+			mainImage.src = images[index];
+			thumbnails.forEach((thumb, i) => {
+				thumb.classList.toggle('active', i === index);
+			});
+		}
+	</script>
+</body>
+</html>

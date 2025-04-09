@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://kebly.co/sitemap.xml
+
+# Crawl-delay: 10
