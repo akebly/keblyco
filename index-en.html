@@ -426,8 +426,28 @@
     <section id="projects" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5">Our Projects</h2>
-            <div class="row" id="projectsGallery">
-                <!-- Projects will be loaded dynamically via JavaScript -->
+            <div class="project-gallery row" id="projectsGallery">
+                <div class="col-md-4 project-card">
+                    <img src="images/projects/project1.jpg" alt="Project 1" class="no-drag">
+                    <div class="project-info">
+                        <h3>Project 1</h3>
+                        <p>Description for Project 1</p>
+                    </div>
+                </div>
+                <div class="col-md-4 project-card">
+                    <img src="images/projects/project2.jpg" alt="Project 2" class="no-drag">
+                    <div class="project-info">
+                        <h3>Project 2</h3>
+                        <p>Description for Project 2</p>
+                    </div>
+                </div>
+                <div class="col-md-4 project-card">
+                    <img src="images/projects/project3.jpg" alt="Project 3" class="no-drag">
+                    <div class="project-info">
+                        <h3>Project 3</h3>
+                        <p>Description for Project 3</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -703,41 +723,6 @@
                     slideInterval = setInterval(nextSlide, 5000);
                 });
             });
-
-            // Project Gallery
-            const projects = [
-                {
-                    title: 'Project 1',
-                    description: 'Description for Project 1',
-                    image: 'images/projects/project1.jpg'
-                },
-                {
-                    title: 'Project 2',
-                    description: 'Description for Project 2',
-                    image: 'images/projects/project2.jpg'
-                },
-                {
-                    title: 'Project 3',
-                    description: 'Description for Project 3',
-                    image: 'images/projects/project3.jpg'
-                }
-            ];
-
-            const projectContainer = document.querySelector('#projectsGallery');
-            if (projectContainer) {
-                projects.forEach(project => {
-                    const projectCard = document.createElement('div');
-                    projectCard.className = 'col-md-4 project-card fade-in';
-                    projectCard.innerHTML = `
-                        <img src="${project.image}" alt="${project.title}" loading="lazy">
-                        <div class="project-info">
-                            <h3>${project.title}</h3>
-                            <p>${project.description}</p>
-                        </div>
-                    `;
-                    projectContainer.appendChild(projectCard);
-                });
-            }
         });
     </script>
 </body>

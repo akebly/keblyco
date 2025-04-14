@@ -11,13 +11,59 @@
 	<style>
 		/* Disable image dragging and right-click */
 		img {
-			user-drag: none;
 			-webkit-user-drag: none;
+			-khtml-user-drag: none;
+			-moz-user-drag: none;
+			-o-user-drag: none;
 			user-select: none;
-			-moz-user-select: none;
 			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+		}
+
+		/* Prevent text selection */
+		.no-select {
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+		}
+
+		/* Prevent dragging for specific elements */
+		.no-drag {
+			-webkit-user-drag: none;
+			-khtml-user-drag: none;
+			-moz-user-drag: none;
+			-o-user-drag: none;
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+		}
+
+		/* Project gallery specific */
+		.project-gallery img {
+			-webkit-user-drag: none;
+			-khtml-user-drag: none;
+			-moz-user-drag: none;
+			-o-user-drag: none;
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
 			-ms-user-select: none;
 			pointer-events: none;
+		}
+
+		/* Hero slider specific */
+		.hero-slide {
+			-webkit-user-drag: none;
+			-khtml-user-drag: none;
+			-moz-user-drag: none;
+			-o-user-drag: none;
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
 		}
 	</style>
 </head>
