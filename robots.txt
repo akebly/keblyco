@@ -1,8 +1,21 @@
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /index-en.html
+Allow: /about.html
+Allow: /about-en.html
+Allow: /training.html
+Allow: /training-en.html
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Disallow admin and private areas
 Disallow: /admin/
 Disallow: /private/
+Disallow: /temp/
 
+# Sitemap location
 Sitemap: https://kebly.co/sitemap.xml
 
 # Crawl-delay: 10

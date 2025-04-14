@@ -3,41 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Kebly Interior Design Company - Professional interior design services in Libya. We specialize in modern and luxury interior designs for homes and businesses.">
-    <meta name="keywords" content="interior design, home decor, office design, retail design, villa design, furniture, shop design, Kebly, Libya">
-    <meta name="author" content="Kebly">
-    <meta property="og:title" content="Kebly Interior Design Company">
-    <meta property="og:description" content="Professional interior design services in Libya">
-    <meta property="og:image" content="./images/logo/logo.png">
-    <meta property="og:url" content="https://kebly.co">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kebly Interior Design Company">
-    <meta name="twitter:description" content="Professional interior design services in Libya">
-    <meta name="twitter:image" content="./images/logo/logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- Primary Meta Tags -->
+    <title>Kebly Interior Design | Professional Interior Design in Libya</title>
+    <meta name="title" content="Kebly Interior Design | Professional Interior Design in Libya">
+    <meta name="description" content="Kebly Interior Design - Professional interior design services, home renovation, and office design in Libya. Over 10 years of experience in interior design and decoration.">
+    <meta name="keywords" content="interior design, decoration, home renovation, office design, libya, tripoli, kebly, تصميم داخلي, ديكور, ليبيا">
+    <meta name="author" content="Kebly Interior Design">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kebly.co/index-en.html">
+    <meta property="og:title" content="Kebly Interior Design | Professional Interior Design">
+    <meta property="og:description" content="Kebly Interior Design - Professional interior design services, home renovation, and office design in Libya.">
+    <meta property="og:image" content="https://kebly.co/images/logo/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kebly.co/index-en.html">
+    <meta property="twitter:title" content="Kebly Interior Design | Professional Interior Design">
+    <meta property="twitter:description" content="Kebly Interior Design - Professional interior design services, home renovation, and office design in Libya.">
+    <meta property="twitter:image" content="https://kebly.co/images/logo/logo.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kebly.co/index-en.html">
+    
+    <!-- Alternate Language Versions -->
+    <link rel="alternate" hreflang="en" href="https://kebly.co/index-en.html">
+    <link rel="alternate" hreflang="ar" href="https://kebly.co/">
+    <link rel="alternate" hreflang="x-default" href="https://kebly.co/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo/favicon.png">
+    <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+    
     <meta name="language" content="English">
     <meta name="robots" content="index, follow">
-    <title>Kebly Interior Design Company</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Mobile-first base styles */
         body {
             font-family: 'Poppins', sans-serif;
             padding-top: 60px;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
+            overflow-x: hidden;
+            position: relative;
         }
-        .language-switch {
-            position: fixed;
-            top: 15px;
-            right: 15px;
-            z-index: 9999;
+
+        /* Mobile Navigation Improvements */
+        .navbar {
+            transition: all 0.3s ease;
         }
-        .language-switch .btn {
+        .navbar-collapse {
+            max-height: 80vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .navbar-nav {
+            padding: 1rem 0;
+        }
+        .nav-link {
+            padding: 0.8rem 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Mobile Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .hero-content {
+            padding: 2rem 1rem;
+        }
+        .hero-content h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+        }
+        .hero-content .lead {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+        }
+        .hero-controls {
+            bottom: 1rem;
+        }
+        .hero-nav {
+            padding: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Mobile Services Section */
+        .service-card {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+        }
+        .service-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Mobile Projects Section */
+        .project-card {
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .project-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        .project-info {
+            padding: 1.2rem;
+        }
+        .project-info h3 {
+            font-size: 1.2rem;
+        }
+
+        /* Mobile Contact Section */
+        .contact-info {
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .contact-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+        }
+        .social-links a {
+            padding: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        /* Mobile Form Improvements */
+        .form-control {
+            padding: 0.8rem;
             font-size: 16px;
-            padding: 5px 15px;
-            background-color: white;
-            border: 1px solid #007bff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        textarea.form-control {
+            min-height: 120px;
+        }
+
+        /* Mobile Footer */
+        footer {
+            padding: 2rem 0;
+        }
+        footer .col-md-4 {
+            margin-bottom: 2rem;
+        }
+        footer h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile-specific improvements */
+        @media (max-width: 768px) {
+            /* General improvements */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Navigation */
+            .navbar {
+                padding: 0.5rem 1rem;
+            }
+            .navbar-brand img {
+                height: 35px;
+            }
+            
+            /* Hero section */
+            .hero {
+                height: 70vh;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .hero-content .btn {
+                width: 100%;
+                padding: 0.8rem;
+            }
+            
+            /* Services */
+            .service-card {
+                text-align: center;
+            }
+            
+            /* Projects */
+            .project-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Contact form */
+            .contact-form {
+                margin-bottom: 2rem;
+            }
+            
+            /* Footer */
+            footer {
+                text-align: center;
+            }
+            footer .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* iOS specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                height: -webkit-fill-available;
+            }
+            input, textarea {
+                font-size: 16px !important;
+            }
+            .navbar-collapse {
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        /* Android specific fixes */
+        @supports not (-webkit-touch-callout: none) {
+            .hero {
+                height: 70vh;
+            }
+        }
+
+        /* Touch-friendly elements */
+        .btn, .nav-link, .hero-nav, .social-links a {
+            min-height: 44px;
+            min-width: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Prevent pull-to-refresh */
+        body {
+            overscroll-behavior-y: contain;
+        }
+
+        /* Smooth scrolling */
+        html {
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        /* Mobile menu improvements */
+        .navbar-toggler {
+            padding: 0.5rem;
+            border: none;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .navbar-collapse {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Mobile-optimized images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Mobile typography */
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; }
+        h3 { font-size: 1.5rem; }
+        p { font-size: 1rem; line-height: 1.5; }
+
+        /* Mobile spacing */
+        section {
+            padding: 3rem 0;
+        }
+
+        /* Mobile animations */
+        @media (prefers-reduced-motion: no-preference) {
+            .fade-in {
+                animation: fadeIn 0.5s ease-in;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -84,10 +350,10 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-slider">
-            <div class="hero-slide active" style="background-image: url('./images/hero/hero-bg.jpg')"></div>
-            <div class="hero-slide" style="background-image: url('./images/hero/hero-bg1.jpg')"></div>
-            <div class="hero-slide" style="background-image: url('./images/hero/hero-bg2.jpg')"></div>
-            <div class="hero-slide" style="background-image: url('./images/hero/hero-bg3.jpg')"></div>
+            <div class="hero-slide active" style="background-image: url('images/hero/hero-bg.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('images/hero/hero-bg1.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('images/hero/hero-bg2.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('images/hero/hero-bg3.jpg')"></div>
         </div>
         <div class="hero-content">
             <div class="container">
@@ -96,6 +362,11 @@
                 <a href="#contact" class="btn btn-primary btn-lg">Start Your Project</a>
             </div>
         </div>
+        <div class="hero-controls">
+            <button class="hero-nav prev" onclick="changeHeroSlide(-1)">&#10094;</button>
+            <button class="hero-nav next" onclick="changeHeroSlide(1)">&#10095;</button>
+        </div>
+        <div class="hero-dots"></div>
     </section>
 
     <!-- Services Section -->
@@ -155,34 +426,8 @@
     <section id="projects" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5">Our Projects</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <img src="./images/projects/project1.jpg" alt="Luxury Villa Design" class="img-fluid">
-                        <div class="project-info">
-                            <h3>Luxury Villa Design</h3>
-                            <p>Modern interior design for a spacious villa</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <img src="./images/projects/project2.jpg" alt="Modern Office Design" class="img-fluid">
-                        <div class="project-info">
-                            <h3>Modern Office Design</h3>
-                            <p>Contemporary workspace design</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <img src="./images/projects/project3.jpg" alt="Restaurant Interior" class="img-fluid">
-                        <div class="project-info">
-                            <h3>Restaurant Interior</h3>
-                            <p>Elegant dining space design</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" id="projectsGallery">
+                <!-- Projects will be loaded dynamically via JavaScript -->
             </div>
         </div>
     </section>
@@ -259,5 +504,241 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Mobile detection and improvements
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        // Mobile-specific adjustments
+        if (isMobile) {
+            // Adjust hero height for mobile
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.height = isIOS ? '-webkit-fill-available' : '70vh';
+            }
+
+            // Improve touch interactions
+            document.querySelectorAll('a, button').forEach(element => {
+                element.style.cursor = 'pointer';
+            });
+
+            // Prevent double-tap zoom
+            document.addEventListener('dblclick', (e) => {
+                e.preventDefault();
+            }, { passive: false });
+
+            // Improve form input handling
+            document.querySelectorAll('input, textarea').forEach(input => {
+                input.addEventListener('focus', () => {
+                    // Ensure input is visible when keyboard appears
+                    setTimeout(() => {
+                        input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 300);
+                });
+            });
+
+            // Handle mobile menu
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', () => {
+                    navbarCollapse.classList.toggle('show');
+                    document.body.style.overflow = navbarCollapse.classList.contains('show') ? 'hidden' : '';
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
+                        navbarCollapse.classList.remove('show');
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Close menu when clicking a link
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navbarCollapse.classList.remove('show');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+
+            // Handle mobile hero slider
+            const slider = document.querySelector('.hero-slider');
+            if (slider) {
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                slider.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+
+                slider.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                }, { passive: true });
+
+                function handleSwipe() {
+                    const swipeThreshold = 50;
+                    if (touchEndX < touchStartX - swipeThreshold) {
+                        nextSlide();
+                    } else if (touchEndX > touchStartX + swipeThreshold) {
+                        prevSlide();
+                    }
+                }
+            }
+
+            // Improve mobile scrolling
+            let lastScrollTop = 0;
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            }, { passive: true });
+
+            // Handle mobile form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        submitButton.textContent = 'Message Sent!';
+                        submitButton.classList.add('btn-success');
+                        
+                        // Reset form
+                        setTimeout(() => {
+                            contactForm.reset();
+                            submitButton.disabled = false;
+                            submitButton.textContent = originalText;
+                            submitButton.classList.remove('btn-success');
+                        }, 2000);
+                    }, 1500);
+                });
+            }
+
+            // Improve mobile image loading
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                }
+            });
+
+            // Handle mobile orientation changes
+            window.addEventListener('orientationchange', () => {
+                setTimeout(() => {
+                    if (hero) {
+                        hero.style.height = isIOS ? '-webkit-fill-available' : '70vh';
+                    }
+                }, 100);
+            });
+        }
+
+        // Hero Slider
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dot');
+            let currentSlide = 0;
+            let slideInterval;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                showSlide((currentSlide + 1) % slides.length);
+            }
+
+            function prevSlide() {
+                showSlide((currentSlide - 1 + slides.length) % slides.length);
+            }
+
+            // Initialize slider
+            showSlide(0);
+            slideInterval = setInterval(nextSlide, 5000);
+
+            // Event listeners for navigation
+            document.querySelector('.hero-next')?.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                nextSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            document.querySelector('.hero-prev')?.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                prevSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    showSlide(index);
+                    slideInterval = setInterval(nextSlide, 5000);
+                });
+            });
+
+            // Project Gallery
+            const projects = [
+                {
+                    title: 'Project 1',
+                    description: 'Description for Project 1',
+                    image: 'images/projects/project1.jpg'
+                },
+                {
+                    title: 'Project 2',
+                    description: 'Description for Project 2',
+                    image: 'images/projects/project2.jpg'
+                },
+                {
+                    title: 'Project 3',
+                    description: 'Description for Project 3',
+                    image: 'images/projects/project3.jpg'
+                }
+            ];
+
+            const projectContainer = document.querySelector('#projectsGallery');
+            if (projectContainer) {
+                projects.forEach(project => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'col-md-4 project-card fade-in';
+                    projectCard.innerHTML = `
+                        <img src="${project.image}" alt="${project.title}" loading="lazy">
+                        <div class="project-info">
+                            <h3>${project.title}</h3>
+                            <p>${project.description}</p>
+                        </div>
+                    `;
+                    projectContainer.appendChild(projectCard);
+                });
+            }
+        });
+    </script>
 </body>
 </html>

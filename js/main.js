@@ -149,99 +149,244 @@ function handleKeyPress(e) {
     if (e.key === 'ArrowRight') navigateImage(1);
 }
 
+// Mobile detection
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+// Mobile-specific adjustments
+if (isMobile) {
+    // Adjust hero height
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.height = isIOS ? '-webkit-fill-available' : '70vh';
+    }
+
+    // Improve touch interactions
+    document.querySelectorAll('a, button').forEach(element => {
+        element.style.cursor = 'pointer';
+    });
+
+    // Prevent double-tap zoom
+    document.addEventListener('dblclick', (e) => {
+        e.preventDefault();
+    }, { passive: false });
+
+    // Improve form input handling
+    document.querySelectorAll('input, textarea').forEach(input => {
+        input.addEventListener('focus', () => {
+            setTimeout(() => {
+                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        });
+    });
+}
+
 // Hero Slider
-let currentSlide = 0;
-const slides = document.querySelectorAll('.hero-slide');
-const heroDotsContainer = document.querySelector('.hero-dots');
+function initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    let currentSlide = 0;
+    let slideInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-// Create dots
-function createDots() {
-    slides.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.className = `hero-dot ${index === 0 ? 'active' : ''}`;
-        dot.onclick = () => goToSlide(index);
-        heroDotsContainer.appendChild(dot);
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        showSlide((currentSlide + 1) % slides.length);
+    }
+
+    function prevSlide() {
+        showSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+
+    // Initialize slider
+    if (slides.length > 0) {
+        showSlide(0);
+        slideInterval = setInterval(nextSlide, 5000);
+
+        // Touch events for mobile
+        const slider = document.querySelector('.hero-slider');
+        if (slider) {
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            slider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+        }
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextSlide();
+            } else if (touchEndX > touchStartX + swipeThreshold) {
+                prevSlide();
+            }
+        }
+
+        // Navigation controls
+        document.querySelector('.hero-next')?.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            nextSlide();
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        document.querySelector('.hero-prev')?.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            prevSlide();
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showSlide(index);
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+    }
+}
+
+// Mobile Menu
+function initMobileMenu() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', () => {
+            navbarCollapse.classList.toggle('show');
+            document.body.style.overflow = navbarCollapse.classList.contains('show') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
+                navbarCollapse.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbarCollapse.classList.remove('show');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+}
+
+// Form Handling
+function initForms() {
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const submitButton = form.querySelector('button[type="submit"]');
+            if (submitButton) {
+                const originalText = submitButton.textContent;
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    submitButton.textContent = 'Message Sent!';
+                    submitButton.classList.add('btn-success');
+                    
+                    setTimeout(() => {
+                        form.reset();
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalText;
+                        submitButton.classList.remove('btn-success');
+                    }, 2000);
+                }, 1500);
+            }
+        });
     });
 }
 
-// Update dots
-function updateDots() {
-    document.querySelectorAll('.hero-dot').forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
+// Image Loading
+function initImageLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                observer.unobserve(img);
+            }
+        });
     });
+
+    images.forEach(img => imageObserver.observe(img));
 }
 
-// Go to specific slide
-function goToSlide(index) {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (index + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    updateDots();
-}
-
-// Change slide
-function changeHeroSlide(direction) {
-    goToSlide(currentSlide + direction);
-}
-
-// Auto advance slides
-function autoAdvanceSlides() {
-    changeHeroSlide(1);
+// Smooth Scrolling
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 }
 
 // Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    loadProjects();
-    createDots();
-    
-    const autoAdvanceInterval = setInterval(autoAdvanceSlides, 5000);
-    
-    // Set up modal event listeners
-    const modal = document.getElementById('imageModal');
-    const closeBtn = document.querySelector('.close-modal');
-    
-    if (modal && closeBtn) {
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) closeModal();
-        });
-        
-        closeBtn.addEventListener('click', closeModal);
-    }
-    
-    // Contact Form Handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('شكراً لتواصلك معنا! سنرد عليك قريباً.');
-            this.reset();
-        });
-    }
-    
-    // Cleanup on page unload
-    window.addEventListener('unload', function() {
-        clearInterval(autoAdvanceInterval);
-        document.removeEventListener('keydown', handleKeyPress);
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    initHeroSlider();
+    initMobileMenu();
+    initForms();
+    initImageLoading();
+    initSmoothScrolling();
+
+    // Add schema markup for SEO
+    const schemaMarkup = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kebly Interior Design",
+        "url": "https://kebly.co",
+        "logo": "https://kebly.co/images/logo/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+218930810080",
+            "contactType": "customer service",
+            "areaServed": "LY",
+            "availableLanguage": ["en", "ar"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/keblycompany",
+            "https://www.instagram.com/keblyco"
+        ]
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schemaMarkup);
+    document.head.appendChild(script);
 });
 
 // Close modal when clicking outside the image
 document.getElementById('imageModal')?.addEventListener('click', function(e) {
     if (e.target === this) closeModal();
-});
-
-// Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop - 70,
-                behavior: 'smooth'
-            });
-        }
-    });
 });
 
 // Navbar Active State
